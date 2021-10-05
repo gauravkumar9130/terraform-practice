@@ -1,6 +1,6 @@
 module "linuxvm" {
     source = "../terraform/linuxvm"
-    resource_group_name="datarg"
+    resource_group_name="prodrg"
     resource_group_location="West US"
     virtual_network_name="vnet1"
     subnet_name="subnet1"
