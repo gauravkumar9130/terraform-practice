@@ -7,7 +7,7 @@
      state: present 
   - name: copy website
     copy:
-     src: ~/fujitsu_project/websites/index.html
+     src: ~/terraform_practice/websites/index.html
      dest: /var/www/html/index.html
   - name: restart service
     service:
