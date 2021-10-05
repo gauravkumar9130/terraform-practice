@@ -2,8 +2,8 @@
   hosts: all
   tasks:
   - name: install package
-    yum:
-     name: httpd
+    apt:
+     name: apache2
      state: present 
   - name: copy website
     copy:
@@ -11,7 +11,7 @@
      dest: /var/www/html/index.html
   - name: restart service
     service:
-      name: httpd
+      name: apache2
       state: restarted
       enabled: true
   - name: add service in firewall
