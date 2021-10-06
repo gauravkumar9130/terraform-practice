@@ -7,17 +7,15 @@
      state: present 
   - name: copy website
     copy:
-     src: ~/terraform_practice/websites/index.html
+     src: templates/web.j2
      dest: /var/www/html/index.html
   - name: restart service
     service:
       name: apache2
       state: restarted
       enabled: true
-  - name: add service in firewall
-    firewalld:
-     service: http
-     state: enabled
-     permanent: yes
-     immediate: true
+  - name: create user
+    user:
+     name: gaurav
+     state: present
     
