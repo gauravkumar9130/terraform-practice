@@ -1,13 +1,13 @@
-- name: configure webserver
+- name: run playbook
   hosts: all
   tasks:
   - name: install package
     apt:
      name: apache2
      state: present 
-  - name: copy website
+  - name: create file
     copy:
-     src: templates/web.j2
+     content: "Welcome to Server"
      dest: /var/www/html/index.html
   - name: restart service
     service:
