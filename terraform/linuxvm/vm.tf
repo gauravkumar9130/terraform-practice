@@ -66,6 +66,7 @@ resource "azurerm_network_interface_security_group_association" "association" {
   network_interface_id      = azurerm_network_interface.example.*.id[count.index]
   network_security_group_id = azurerm_network_security_group.example.id
 }
+
 resource "tls_private_key" "example_ssh" {
   algorithm = "RSA"
   rsa_bits  = 4096
